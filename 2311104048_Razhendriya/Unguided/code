@@ -1,0 +1,127 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Masukkan panjang array: ";
+    cin >> n;
+
+    vector<int> data_array(n), nomor_genap, nomor_ganjil;
+    
+    for (int i = 0; i < n; i++) {
+        cout << "Masukkan elemen ke-" << i+1 << ": ";
+        cin >> data_array[i];
+    }
+    
+    for (int i = 0; i < n; i++) {
+        if (data_array[i] % 2 == 0) {
+            nomor_genap.push_back(data_array[i]);
+        } else {
+            nomor_ganjil.push_back(data_array[i]);
+        }
+    }
+    
+    cout << "Data Array: ";
+    for (int i = 0; i < n; i++) {
+        cout << data_array[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Nomor Genap: ";
+    for (int i = 0; i < nomor_genap.size(); i++) {
+        cout << nomor_genap[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Nomor Ganjil: ";
+    for (int i = 0; i < nomor_ganjil.size(); i++) {
+        cout << nomor_ganjil[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x, y, z;
+    cout << "Masukkan ukuran dimensi pertama: ";
+    cin >> x;
+    cout << "Masukkan ukuran dimensi kedua: ";
+    cin >> y;
+    cout << "Masukkan ukuran dimensi ketiga: ";
+    cin >> z;
+
+    int array_3d[x][y][z];
+
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            for (int k = 0; k < z; k++) {
+                cout << "Masukkan elemen (" << i << "," << j << "," << k << "): ";
+                cin >> array_3d[i][j][k];
+            }
+        }
+    }
+
+    cout << "Array 3 Dimensi:" << endl;
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            for (int k = 0; k < z; k++) {
+                cout << "array_3d[" << i << "][" << j << "][" << k << "] = " << array_3d[i][j][k] << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Masukkan jumlah elemen array: ";
+    cin >> n;
+
+    vector<int> array(n);
+    
+    for (int i = 0; i < n; i++) {
+        cout << "Masukkan elemen ke-" << i+1 << ": ";
+        cin >> array[i];
+    }
+
+    cout << "\nPilih operasi:\n";
+    cout << "1. Nilai Maksimum\n";
+    cout << "2. Nilai Minimum\n";
+    cout << "3. Nilai Rata-rata\n";
+
+    int pilihan;
+    cout << "Masukkan pilihan (1/2/3): ";
+    cin >> pilihan;
+
+    if (pilihan == 1) {
+        int maksimum = *max_element(array.begin(), array.end());
+        cout << "Nilai Maksimum: " << maksimum << endl;
+    } else if (pilihan == 2) {
+        int minimum = *min_element(array.begin(), array.end());
+        cout << "Nilai Minimum: " << minimum << endl;
+    } else if (pilihan == 3) {
+        double rata_rata = 0;
+        for (int i = 0; i < n; i++) {
+            rata_rata += array[i];
+        }
+        rata_rata /= n;
+        cout << "Nilai Rata-rata: " << rata_rata << endl;
+    } else {
+        cout << "Pilihan tidak valid!" << endl;
+    }
+
+    return 0;
+}
