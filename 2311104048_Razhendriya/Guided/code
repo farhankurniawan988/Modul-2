@@ -1,0 +1,85 @@
+int main() {
+    int nilai[5] = {1, 2, 3, 4, 5};
+   
+    cout << nilai[4] << endl;  
+   
+    for (int i = 0; i < 5; i++) {  
+        cout << nilai[i] << " ";
+    }
+
+    return 0;
+}
+
+
+int main() {
+    int nilai[3][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+
+    for (int i = 0; i < 3; i++) {  
+        for (int j = 0; j < 4; j++) {  
+            cout << nilai[i][j] << " ";  
+        }
+        cout << endl;  
+    }
+
+    return 0;
+}
+
+
+int main() {
+    int x, y;
+    int *px;  
+
+    x = 10;
+    y = 20;
+    px = &x;  
+
+    cout << "Alamat x = " << &x << endl;  
+    cout << "Isi px = " << px << endl;  
+    cout << "Nilai yang ditunjuk px = " << *px << endl;  
+    cout << "Nilai y = " << y << endl;  
+
+    getch();  
+
+    return 0;
+}
+
+
+int penjumlahan(int a, int b) {
+    return a + b;  
+}
+
+int main() {
+    int hasil = penjumlahan(5, 3);  
+    
+    cout << "Hasil penjumlahan: " << hasil << endl;  
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int penjumlahan(int a, int b) {
+    return a + b;  
+}
+
+void greet(string name) {
+    cout << "Hello, " << name << "!" << endl;  
+}
+
+int main() {
+    int hasil = penjumlahan(5, 3);  
+    cout << "Hasil = " << hasil << endl;  
+    
+    greet("Alice");  
+    
+    return 0;
+}
+
+
+
